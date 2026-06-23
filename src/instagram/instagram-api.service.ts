@@ -40,9 +40,17 @@ export class InstagramApiService {
         headers: {
           'X-IG-App-ID': IG_APP_ID,
           'X-CSRFToken': csrfToken ?? '',
-          Cookie: `sessionid=${sessionId}; csrftoken=${csrfToken}`,
+          'X-ASBD-ID': '129477',
+          'X-Requested-With': 'XMLHttpRequest',
+          Cookie: `sessionid=${sessionId}; csrftoken=${csrfToken}; ds_user_id=${userId}`,
           'User-Agent':
             'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0 Safari/537.36',
+          Referer: 'https://www.instagram.com/',
+          Origin: 'https://www.instagram.com',
+          Accept: '*/*',
+          'Sec-Fetch-Dest': 'empty',
+          'Sec-Fetch-Mode': 'cors',
+          'Sec-Fetch-Site': 'same-origin',
         },
       });
 
